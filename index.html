@@ -11,41 +11,53 @@
 
 <body>
     <header>
-        <h1>
-            Sorting Visualizer
-        </h1>
+        <h1>Sorting Visualizer</h1>
     </header>
     <main>
-        <section class="controls">
-            <button id="newarr" class="btn">Generate New Array</button>
-            <div class="slider-container">
-                <label for="sizer">Size:</label>
-                <input id="sizer" type="range" min="20" max="100" step="1" value="60">
-            </div>
-            <div class="slider-container">
-                <label for="speed">Speed:</label>
-                <input id="speed" type="range" min="10" max="240" step="1" value="100">
-            </div>
-        </section>
+        <!-- Sorting Buttons Above -->
         <section class="sorting-controls">
             <button id="bubble" class="btn">Bubble Sort</button>
             <button id="selection" class="btn">Selection Sort</button>
             <button id="insertion" class="btn">Insertion Sort</button>
             <button id="merge" class="btn">Merge Sort</button>
             <button id="quick" class="btn">Quick Sort</button>
-            <button id="radix" class="btn">Radix Sort</button> <!-- Radix Sort button -->
-            <button id="shell" class="btn">Shell Sort</button> <!-- Shell Sort button -->
+            <button id="radix" class="btn">Radix Sort</button>
+            <button id="shell" class="btn">Shell Sort</button>
         </section>
+
+        <!-- Sliders Between Buttons and Visualizer -->
+        <section class="sliders">
+            <!-- Speed Slider on the Left -->
+            <div class="slider-container speed-slider">
+                <label for="speed">Speed:</label>
+                <input id="speed" type="range" min="10" max="240" step="1" value="100">
+            </div>
+
+            <!-- Size Slider on the Right -->
+            <div class="slider-container size-slider">
+                <label for="sizer">Size:</label>
+                <input id="sizer" type="range" min="20" max="100" step="1" value="60">
+            </div>
+        </section>
+
+        <!-- Visualization Area -->
         <section id="bar" class="visualization-area"></section>
+
+        <!-- Generate New Array Button Below -->
+        <section class="generate-array">
+            <button id="newarr" class="btn">Generate New Array</button>
+        </section>
     </main>
+
+    <!-- Scripts -->
     <script src="scripts/sorting.js"></script>
     <script src="scripts/bubble.js"></script>
     <script src="scripts/selection.js"></script>
     <script src="scripts/insertion.js"></script>
     <script src="scripts/merge.js"></script>
     <script src="scripts/quick.js"></script>
-    <script src="scripts/radix.js"></script> <!-- Radix Sort script -->
-    <script src="scripts/shell.js"></script> <!-- Shell Sort script -->
+    <script src="scripts/radix.js"></script>
+    <script src="scripts/shell.js"></script>
 </body>
 
 </html>

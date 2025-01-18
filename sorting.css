@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #121212; /* Dark background for the page */
+    color: #e0e0e0; /* Light gray text for readability */
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -12,209 +12,119 @@ body {
 
 /* Header Styles */
 header h1 {
-    color: #A1B6D3;
+    margin: 20px 0;
+    color: #A1B6D3; /* Softer, muted blue for header */
     font-size: 2rem;
     text-align: center;
-    margin: 20px 0;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+header h1 a:hover {
+    color: #3b6f99; /* Muted hover color */
 }
 
 /* Button Styles */
 .btn {
-    background: linear-gradient(45deg, #4b5c6b, #3b4a56);
+    background: linear-gradient(45deg, #4b5c6b, #3b4a56); /* Darker gradient for buttons */
     border: none;
     border-radius: 20px;
     color: white;
     padding: 10px 20px;
-    margin: 7px 0;
+    margin: 10px;
     cursor: pointer;
     font-size: 1rem;
     transition: background 0.3s, transform 0.2s;
 }
 
 .btn:hover {
-    background: linear-gradient(45deg, #5b6a7a, #4a5967);
+    background: linear-gradient(45deg, #5b6a7a, #4a5967); /* Slightly lighter gradient on hover */
     transform: scale(1.05);
 }
 
-/* Sorting Controls Section */
-.sorting-controls {
-    margin-top: 10px;
-    width: 100%;
-    text-align: center;
+/* Slider Styles */
+.slider-container {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 1rem;
 }
 
-/* Sliders Section */
-.sliders {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1400px;
-    margin-top: 30px; /* Increased space between sliders and buttons */
-}
-
-/* Speed Slider on the Left */
-.speed-slider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20%; /* Adjust width */
-}
-
-/* Size Slider on the Right */
-.size-slider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20%; /* Adjust width */
-}
-
-/* Slider Styling */
 input[type="range"] {
     appearance: none;
-    width: 100%;
-    height: 7px;
-    background: #333; /* Darker track for the slider */
+    width: 200px;
+    height: 5px;
+    background: #333; /* Darker gray for the slider track */
+    outline: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 input[type="range"]::-webkit-slider-thumb {
     appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #4b5c6b; /* Matching thumb color */
+    width: 15px;
+    height: 15px;
+    background: #4b5c6b; /* Softer navy thumb */
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.3s;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-    background: #5b6a7a; /* Slightly lighter hover thumb */
+    background: #5b6a7a; /* Lighter navy on hover */
 }
 
 /* Visualization Area */
 .visualization-area {
     display: flex;
     align-items: flex-end;
-    justify-content: flex-start;
-    height: 60vh; /* Increased height for the visualization area */
-    flex: 1;
-    background: #1e1e2f;
-    border: 2px solid #333;
+    justify-content: flex-start; /* Align bars to the left */
+    height: 400px; /* Fixed height */
+    width: 145%; /* Increased width */
+    margin-left: -24%; /* Shift the box towards the left */
+    background: #1e1e2f; /* Darker navy-blue background */
+    border: 2px solid #333; /* Border color to match theme */
     border-radius: 10px;
     overflow: hidden;
     padding: 10px;
-    box-sizing: border-box;
-    margin-top: 45px;
-    width: 100%; /* Full width */
-    max-width: 2700px; /* Maximum width for large screens */
 }
 
 /* Bar Styling */
 .baritem {
-    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    background: linear-gradient(45deg, #0072ff, #00c6ff); /* Blue gradient for bars */
     border-radius: 5px;
-    margin: 0 1px;
+    margin: 0 1px; /* Slight margin between bars */
     transition: height 0.2s, background 0.3s;
-    flex: 1;
-    min-width: 5px;
+    flex: 1; /* This ensures the bars fill the container */
+    min-width: 6px; /* Minimum bar width to ensure they are visible */
 }
 
+/* Hover Effect on Bars */
 .baritem:hover {
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    background: linear-gradient(45deg, #00c6ff, #0072ff); /* Lighter blue on hover */
 }
 
 /* Highlight Colors for Sorting */
 .baritem.sorted {
-    background: linear-gradient(45deg, #28a745, #218838) !important;
+    background: linear-gradient(45deg, #28a745, #218838) !important; /* Green for sorted elements */
 }
 
 .baritem.active {
-    background: linear-gradient(45deg, #dc3545, #c82333) !important;
+    background: linear-gradient(45deg, #dc3545, #c82333) !important; /* Red for active comparisons */
 }
 
-/* Generate New Array Button Below */
-.generate-array {
+/* Sorting Controls Section */
+.sorting-controls {
+    margin-top: 20px;
     text-align: center;
-    margin-top: 10px;
 }
 
-/* Responsive Styles */
-
-/* For larger tablets and small screens (iPad, etc.) */
-@media (max-width: 1024px) {
-    .sliders {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .speed-slider,
-    .size-slider {
-        width: 70%; /* Adjust width for medium screens */
-        margin: 10px 0;
-    }
-
-    .visualization-area {
-        width: 90%; /* Adjust width for smaller screens */
-        height: 50vh; /* Reduce height */
-    }
-
-    .baritem {
-        min-width: 3px; /* Reduce the width of bars for better visibility */
-    }
-
-    input[type="range"] {
-        width: 150px; /* Adjust slider width */
-    }
-}
-
-/* For phones like iPhone (up to 768px) */
-@media (max-width: 768px) {
-    .sliders {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .speed-slider,
-    .size-slider {
-        width: 80%; /* Adjust width for smaller screens */
-        margin: 10px 0;
-    }
-
-    .visualization-area {
-        width: 100%; /* Ensure full width */
-        height: 45vh; /* Further reduce height */
-        margin-right: 0; /* Remove any right margin */
-    }
-
-    .baritem {
-        min-width: 3px; /* Reduce the width of bars for better visibility */
-    }
-
-    input[type="range"] {
-        width: 120px; /* Adjust slider width */
-    }
-}
-
-/* For smaller phones (Google Pixel, iPhone SE) */
-@media (max-width: 480px) {
-    .visualization-area {
-        height: 35vh; /* Further reduce height */
-        width: 100%; /* Ensure full width */
-        margin-right: 0; /* Remove any right margin */
-    }
-
-    .baritem {
-        min-width: 2px; /* Reduce the width of bars for better visibility */
-    }
-
-    input[type="range"] {
-        width: 100px; /* Adjust slider width for very small screens */
-    }
-
-    .btn {
-        padding: 8px 16px; /* Slightly smaller button for mobile */
-        font-size: 0.9rem;
-    }
+/* Slider Container */
+.slider-container label {
+    color: #e0e0e0; /* Light gray text for labels */
+    font-size: 1rem;
+    margin-right: 10px;
 }

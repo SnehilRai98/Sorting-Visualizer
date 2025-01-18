@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    background-color: #121212; /* Dark background for the page */
+    color: #e0e0e0; /* Light gray text for readability */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styles */
+header h1 {
+    margin: 20px 0;
+    color: #A1B6D3; /* Softer, muted blue for header */
+    font-size: 2rem;
+    text-align: center;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+header h1 a:hover {
+    color: #3b6f99; /* Muted hover color */
+}
+
+/* Button Styles */
+.btn {
+    background: linear-gradient(45deg, #4b5c6b, #3b4a56); /* Darker gradient for buttons */
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #5b6a7a, #4a5967); /* Slightly lighter gradient on hover */
+    transform: scale(1.05);
+}
+
+/* Slider Styles */
+.slider-container {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 1rem;
+}
+
+input[type="range"] {
+    appearance: none;
+    width: 200px;
+    height: 5px;
+    background: #333; /* Darker gray for the slider track */
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #4b5c6b; /* Softer navy thumb */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #5b6a7a; /* Lighter navy on hover */
+}
+
+/* Visualization Area */
+.visualization-area {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start; /* Align bars to the left */
+    height: 400px; /* Fixed height */
+    width: 145%; /* Increased width */
+    margin-left: -24%; /* Shift the box towards the left */
+    background: #1e1e2f; /* Darker navy-blue background */
+    border: 2px solid #333; /* Border color to match theme */
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/* Bar Styling */
+.baritem {
+    background: linear-gradient(45deg, #0072ff, #00c6ff); /* Blue gradient for bars */
+    border-radius: 5px;
+    margin: 0 1px; /* Slight margin between bars */
+    transition: height 0.2s, background 0.3s;
+    flex: 1; /* This ensures the bars fill the container */
+    min-width: 6px; /* Minimum bar width to ensure they are visible */
+}
+
+/* Hover Effect on Bars */
+.baritem:hover {
+    background: linear-gradient(45deg, #00c6ff, #0072ff); /* Lighter blue on hover */
+}
+
+/* Highlight Colors for Sorting */
+.baritem.sorted {
+    background: linear-gradient(45deg, #28a745, #218838) !important; /* Green for sorted elements */
+}
+
+.baritem.active {
+    background: linear-gradient(45deg, #dc3545, #c82333) !important; /* Red for active comparisons */
+}
+
+/* Sorting Controls Section */
+.sorting-controls {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Slider Container */
+.slider-container label {
+    color: #e0e0e0; /* Light gray text for labels */
+    font-size: 1rem;
+    margin-right: 10px;
+}
